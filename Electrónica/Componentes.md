@@ -147,3 +147,14 @@ Era totalmente necesario su incoporación para el Obstacle Challenge. Esta nos p
 |**Control Interface:** UART serial, SPI, I2C, USB, digital, analog|**Built-in Features:** Color-based object learning/detection, line and intersection tracking, barcode-style "road sign" detection, onboard memory for up to 7 saved objects, integrated LED light source (~20 lumens)|
 | 🔗 **[Buy Here](https://eu.robotshop.com/es/products/sensor-de-imagen-de-vision-robotica-pixy-21-de-charmed-labs?gad_source=1&gad_campaignid=20151977646&gbraid=0AAAAAD_f_xyTTc3D6DgA-EzSpU38W9Ajj&gclid=Cj0KCQjwteTUBhD4ARIsAEYjs3pSliz38hXgobSBDR2CWHVE9Ir7rqIC_WgeYnrKgPRKOID7nr_NkakaAq7yEALw_wcB)** |**Function:** Smart vision sensor that processes images onboard to recognize and track objects by color, lines, and signs — freeing the main microcontroller (Arduino/Raspberry Pi) from that processing load. |
 
+## Giroscopio
+Un giroscopio es un sensor que mide la velocidad angular o cambio de orientación en uno, dos o tres ejes (X, Y, Z). Te dice qué tan rápido está girando un objeto y en qué dirección. Se conecta de esta manera:
+- VIN / VCC: Conectar a 3.3V o 5V (según el módulo).
+- GND: Conectar a tierra.
+- SDA: Conectar al pin SDA de tu placa (en Arduino Uno es A4).
+- SCL: Conectar al pin SCL de tu placa (en Arduino Uno es A5).
+<p align="center">
+<img src="fotos_electronica/conexionesgiroscopio.png" width="700" height="700" />
+</p>
+
+| Model: BNO055 | Operating Voltage: 1.8V – 3.6V | | Logic Voltage: 3.3V / 5V compatible | Output Frequency: 62.5 Hz (Accelerometer), 100 Hz (Gyroscope), 20 Hz (Magnetometer) | | Resolution: 14-bit (Accel) / 16-bit (Gyro) / 13-bit (Mag) | Features: 9-axis IMU, sensor fusion (Euler angles, quaternions), integrated microcontroller, calibration routines | | Control Interface: I2C / UART (4-wire: SDA, SCL, VCC, GND) | Operating speed: Continuous real-time output, configurable data rates up to 100 Hz | | 🔗 Buy Here | Function: 9-DOF orientation, motion sensing, and inertial measurement |
