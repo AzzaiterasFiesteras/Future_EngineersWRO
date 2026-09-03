@@ -12,5 +12,5 @@
 Mi nombre es Lidia Requena Torres, tengo 16 años y actualmente estoy estudiando en otro instituto un grado formativo sobre Atención a Personas en Situación de Dependencia. Llevo los cuatro años de la ESO participando en robótica, ya que me parece muy interesante, entretenido y lo más importante, ¡divertido! Me dieron la oportunidad de seguir participando por las tardes y no me lo pensé. Aprendo mucho con nuestro maravilloso profesor y me lo paso genial con mi equipo. Mis hobbies son jugar al fútbol, estar con mis amigos y familia. Me gustan mucho estar con los niños pequeños.
 
 <p align="center">
-<img src="Resultado/1000102223.jpg" width="450" height="600" />
+<img src="fotos_introduccion/fotolidi.jpg" width="450" height="600" />
 </p>
