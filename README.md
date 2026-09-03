@@ -465,7 +465,11 @@ For programming, we use the Arduino IDE program. Once the program is complete, a
 [![Centre Website](https://img.shields.io/badge/Website-Visit-brightgreen?style=for-the-badge&logo=web&logoColor=white)](https://www.iesaz-zait.es/)
 [![Centre Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)](https://www.instagram.com/iesazzait/?hl=es)
 [![Centre X](https://img.shields.io/badge/X-%23000000.svg?style=for-the-badge&logo=x&logoColor=white)](https://x.com/IESAZZAITjaen)
-
+[![Eva´s Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)](https://www.instagram.com/evaaespinosaa_/)
+[![Lidia´s Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)](https://www.instagram.com/lireto08/)
+[![JAÉN WRO Website](https://img.shields.io/badge/Website-Visit-brightgreen?style=for-the-badge&logo=web&logoColor=white)](https://sites.google.com/iesaz-zait.es/wrojaen/wro)
+[![Gmail](https://img.shields.io/badge/Gmail-%23D14836.svg?style=for-the-badge&logo=gmail&logoColor=white)](mailto:eesport2405@g.educaand.es)
+[![Gmail](https://img.shields.io/badge/Gmail-%23D14836.svg?style=for-the-badge&logo=gmail&logoColor=white)](mailto:lreqtor2506@g.educaand.es)
 
 ## Bibliography 
 
