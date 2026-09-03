@@ -407,7 +407,120 @@ else {
 > However, if the robot does not detect any walls, it means that the path is clear. In this case, the motors are activated and the speed is increased. At the same time, the direction is continuously adjusted to ensure the robot moves in a straight line. If the robot deviates from the correct path, the servo automatically corrects the steering to bring it back to a straight trajectory.
 
 ### Obstacle Challenge
+## Libraries
+```cpp
+#include <Wire.h>
+#include <SPI.h>
+#include <Adafruit_Sensor.h>
+#include <Adafruit_BNO055.h>
+#include <Servo.h>
+#include <Ultrasonic.h>
+#include <Pixy2.h>
+```
+At the beginning of the code, several libraries are included. These are sets of functions already written by other developers that let us control complex components without having to program how they work from scratch.
+`Wire` and `SPI` are communication protocols between the board and other components.
+`Adafruit_BNO055` allows interaction with the gyroscope.
+`Servo` controls the servo motor that acts as steering.
+`Ultrasonic` manages the ultrasonic distance sensors.
+`Pixy2` is the specific library for the smart camera that recognizes colors.
 
+## Pins and Variables
+```cpp
+int ENA = 5;
+int IN1 = 6;
+int IN2 = 7;
+Servo cochino;
+const int pinservo = 9;
+const int pinPulsador = 13;
+
+float anguloObjetivo;
+int centroServo = 35;
+int sentido = 0;
+int contadorGiros = 0;
+```
+Next, the Arduino pins are assigned to each physical component. `ENA`, `IN1`, and `IN2` correspond to the drive motor, where we regulate the wheels' speed and direction of rotation.
+`pinservo` indicates which pin the steering servo motor is connected to.
+`pinPulsador` is the button the user presses to start the race.
+Then variables are declared that act as the robot's "working memory" during operation: `anguloObjetivo` stores the angle the robot must face in order to move in a straight line; `centroServo` is the servo's straight (neutral) position; `sentido` determines whether the circuit is run always turning right or always turning left; and `contadorGiros` keeps count of how many corners the robot has completed, which lets it know when it has finished the three laps.
+
+## Camera
+```cpp
+Adafruit_BNO055 bno = Adafruit_BNO055(55);
+Pixy2 pixy;
+#define SIG_ROJO  1
+#define SIG_VERDE 2
+const int GIRO_COLOR = 15;
+```
+Here the objects representing the gyroscope (`bno`) and the camera (`pixy`) are created. In object-oriented programming, this is equivalent to saying that we already have those two instruments ready to be used through their respective functions throughout the program. The Pixy2 camera does not recognize colors on its own by default: it must first be trained using external software called PixyMon, installed on a computer. During this training, an object of a given color is shown to the camera and assigned an identifying number, called a "signature." This program assumes that signature number 1 corresponds to red and signature number 2 to green, although this order depends entirely on how the training was carried out. The `GIRO_COLOR` constant determines how many degrees the servo motor will turn when one of these colors is detected.
+
+## Ultrasonic Sensors
+```cpp
+#define TRIG_IZQ 8
+#define ECHO_IZQ 10
+Ultrasonic ultraIZQ(TRIG_IZQ, ECHO_IZQ, 60000);
+```
+The robot has three ultrasonic sensors — left, center, and right — that work as follows: they emit a high-frequency sound wave and measure the time it takes to return after bouncing off an obstacle. From that time, and knowing the speed of sound in air, the distance to the obstacle is calculated.
+
+## Void Setup
+```cpp
+void setup() {
+  Serial.begin(9600);
+  ...
+  if (!bno.begin()) { while(1); }
+  pixy.init();
+  prepararSensor();
+}
+```
+The `setup()` function runs only once, right when the Arduino is powered on, and its purpose is to prepare all the components before the robot starts moving. In it, serial communication is initialized (useful for checking readings from the computer), the pins are configured, the servo motor is centered, and the gyroscope is checked to confirm it is responding correctly; if it is not detected, the program enters an infinite loop and halts all activity, since without that sensor the robot would not be able to orient itself. The Pixy2 camera is then initialized, and finally the `prepararSensor()` function is called, which is explained further below.
+
+## Void Loop
+```cpp
+if (digitalRead(pinPulsador) == LOW) {
+  start = true;
+}
+if (contadorGiros >= 12) {
+  terminarCarrera();
+  while(1);
+}
+int cmCentro = ultraCENTRO.Ranging(CM);
+float anguloAhora = obtenerGrados();
+int cmIzq = ultraIZQ.Ranging(CM);
+int cmDer = ultraDERECH.Ranging(CM);
+
+if (cmCentro < 80) { contador1++; } else { contador1 = 0; }
+if (cmCentro < 140 && abs(cmIzq-cmDer) > 120) { contador2++; } else { contador2 = 0; }
+if (contador1 > 2 || contador2 > 2) {
+  // stop the motor
+  // if it's the first corner, decide whether the circuit is clockwise or counterclockwise
+  // turn 90°
+  contadorGiros++;
+}
+else {
+  // move forward
+  int colorDetectado = detectarColor();
+
+  if (colorDetectado == SIG_VERDE) {
+    cochino.write(centroServo - GIRO_COLOR);   // turn slightly left
+  } else if (colorDetectado == SIG_ROJO) {
+    cochino.write(centroServo + GIRO_COLOR);   // turn slightly right
+  } else {
+    // no colors detected: correct heading using the gyroscope, as before
+  }
+}
+```
+This is the core of the program: it repeats continuously while the Arduino is powered on, running thousands of times per second.
+Waiting for the button. At the start of the loop, it checks whether the start button has been pressed. Until this happens, the `start` variable remains `false` and the robot does nothing else.
+End condition. Once the race has started, it checks whether `contadorGiros` has reached 12 (3 laps x 4 corners each). If so, `terminarCarrera()` is called and the program stops permanently with an empty infinite loop.
+Sensor reading. On every pass through the loop, the three ultrasonic sensors are read, along with the current angle via the `obtenerGrados()` function.
+Reading filter. To prevent a single faulty reading from causing an incorrect turn, the program does not react to the first detection. Instead, it uses two counters (`contador1` and `contador2`) that only increase if the same condition is met several times in a row. This filters out the typical noise from ultrasonic sensors.
+Behavior when facing an obstacle: when the counters exceed the threshold, the motor stops. If it is the first corner of the whole race, the program decides on its own whether the circuit will be run clockwise or counterclockwise, based on which side has more free space. Then `hacerGiro()` is called to execute the 90-degree turn.
+Behavior with a clear path: this is where the camera comes in: before applying the usual correction, `detectarColor()` is checked to see if a red or green block is in view. If green is detected, the servo turns slightly left; if red, it turns right. Only if neither color is detected does the program fall back to its original logic: comparing the current angle with the target angle and correcting the heading using the gyroscope to keep a straight trajectory.
+Other Functions
+`obtenerGrados()`: queries the gyroscope and returns the robot's current orientation angle relative to a fixed reference point.
+`prepararSensor()`: keeps the program waiting until the gyroscope's calibration level reaches its maximum value, and then sets the initial angle as the "straight line" reference.
+`detectarColor()`: requests from the Pixy2 camera the list of color blocks currently detected, selects the largest one matching either the red or green signature, and returns a value identifying that color, or zero if none relevant is detected.
+`hacerGiro(grados)`: physically executes the corner turn, activating the motor and steering the servo motor while continuously comparing the current angle with the target angle, until the difference between them is small enough.
+`terminarCarrera()`: stops the lap process, moves the robot forward for a few extra seconds to fully complete the 3 laps, and finally shuts off the motor.
 
 ## Code functions
 | Function                |        Type   | What does it do?                         | Use in the program                                                                                                                            |
