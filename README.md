@@ -560,6 +560,8 @@ For programming, we use the Arduino IDE program. Once the program is complete, a
 > For seeing all the final products and our final result in the Open challenge, click the link below 👇 for seeing all the information with details.
 >
 > [For more information click here](Resultado/Resultado_final.md)
+>
+> 
  [![](https://img.youtube.com/vi/cXj32blsBB0/0.jpg)](https://www.youtube.com/watch?v=cXj32blsBB0)
 
 ## Conclusion and Analysis
