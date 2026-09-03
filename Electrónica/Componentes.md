@@ -34,7 +34,7 @@ El escudo que hemos utilizado ha sido el modelo L298N, y lo usamos principalment
 | **Logic Voltage:** 5V TTL compatible | **PWM Frequency:** Up to 25–30 kHz |
 | **Max Continuous Current:** 2A per channel  |**Max Peak Current:** 3A per channel (short duration)|
 | **Control Interface:** PWM + Direction pins (IN1–IN4, ENA, ENB) |**Built-in Features:** Dual H-Bridge, 5V regulator (78M05), thermal protection, flyback diodes |
-| 🔗 **[Buy Here](https://www.lcsc.com/product-image/C112633.html)** | **Function:** Controls the speed and direction of DC motors and stepper motors using PWM and H-Bridge switching |
+| 🔗 **[Buy Here](https://es.aliexpress.com/item/1005007921497376.html?src=google&src=google&albch=shopping&acnt=439-079-4345&isdl=y&slnk=&plac=&mtctp=&albbt=Google_7_shopping&aff_platform=google&aff_short_key=UneMJZVf&gclsrc=aw.ds&albagn=888888&ds_e_adid=&ds_e_matchtype=&ds_e_device=c&ds_e_network=x&ds_e_product_group_id=&ds_e_product_id=es1005007921497376&ds_e_product_merchant_id=5762056048&ds_e_product_country=ES&ds_e_product_language=es&ds_e_product_channel=online&ds_e_product_store_id=&ds_url_v=2&albcp=21840696692&albag=&isSmbAutoCall=false&needSmbHouyi=false&gad_source=1&gad_campaignid=21844625911&gbraid=0AAAAACbpfvY6Tr7heMhr1Ue2c3Xx6zC0y&gclid=Cj0KCQjwteTUBhD4ARIsAEYjs3oVV1d5k8KFNlUW8mpFq3IWZp6DEnsA46ibw2MTa2oFglrS0UgNisQaAn_dEALw_wcB)** | **Function:** Controls the speed and direction of DC motors and stepper motors using PWM and H-Bridge switching |
 
 <p align="center">
 <img src="fotos_electronica/IMG_1355.jpeg" width="700" height="700" />
@@ -49,7 +49,7 @@ Para la correcta programación de nuestro robot necesitábamos disponer de tres 
 | **Logic Voltage:** 5V TTL compatible | **PWM Frequency:** 40 kHz |
 | **Measuring Range:** 2 cm – 400 cm |**Measurement Accuracy:** ±3 mm|
 | **Control Interface:** Trigger (TRIG) + Echo (ECHO) digital pins |**Built-in Features:** Non-contact distance measurement, low power consumption, automatic echo detection |
-| 🔗 **[Buy Here](https://www.lcsc.com/product-image/C112633.html)** | **Function:** Measures the distance to objects by transmitting and receiving ultrasonic waves|
+| 🔗 **[Buy Here](https://es.aliexpress.com/item/1005008222329963.html?src=google&snpsid=1&src=google&albch=shopping&acnt=439-079-4345&isdl=y&slnk=&plac=&mtctp=&albbt=Google_7_shopping&aff_platform=google&aff_short_key=UneMJZVf&gclsrc=aw.ds&albagn=888888&ds_e_adid=&ds_e_matchtype=&ds_e_device=c&ds_e_network=x&ds_e_product_group_id=&ds_e_product_id=es1005008222329963&ds_e_product_merchant_id=5551326180&ds_e_product_country=ES&ds_e_product_language=es&ds_e_product_channel=online&ds_e_product_store_id=&ds_url_v=2&albcp=21840696692&albag=&isSmbAutoCall=false&needSmbHouyi=false&gad_source=1&gad_campaignid=21844625911&gbraid=0AAAAACbpfvY6Tr7heMhr1Ue2c3Xx6zC0y&gclid=Cj0KCQjwteTUBhD4ARIsAEYjs3q9SFLaalZTnOR2RG_ic11psDn8Sgzc2-KZxXnwqmY6ke_l_SUegJ4aAtzxEALw_wcB)** | **Function:** Measures the distance to objects by transmitting and receiving ultrasonic waves|
 
 <p align="center">
 <img src="fotos_electronica/IMG_1357.jpeg" width="700" height="700" />
@@ -65,7 +65,7 @@ La placa que hemos utilizado para nuestro robot ha sido la Arduino Uno R3. Decid
 |**Microcontroller:** ATmega328P|**Memory:** 32 KB Flash, 2 KB SRAM, 1 KB EEPROM|
 | **Digital I/O Pins:** 14 (6 PWM outputs) |**Analog Inputs:** 6 (10-bit ADC) |
 | **Communication Interfaces:** UART, I²C, SPI, USB|**Features:** USB Type-B, ICSP header, reset button, onboard voltage regulator, replaceable ATmega328P |
-| 🔗 **[Buy Here](https://www.lcsc.com/product-image/C112633.html)** | **Function:** Programmable microcontroller board for controlling sensors, actuators, and embedded electronic systems. |
+| 🔗 **[Buy Here](https://www.amazon.es/Arduino-UNO-A000066-microcontrolador-ATmega328/dp/B008GRTSV6/ref=sr_1_3_sspa?adgrpid=69804669291&dib=eyJ2IjoiMSJ9.Vj7GES04FN79u2IKKbZGbmtaiTZxHpF06kPx-yBqQP3OEEiwDU6h4ZE7XuWOQWmfuJe2tgS4Gf8b9r_yJNaLDAHphZ5I6v3RAr6olylU6NULE_8TiMOkuD71w1lECLE7q-ZU2XoOO2pu6b0JcaF6cbXokf1VjjENlydWZdyHgwcf6hTqO3_uIaTuNKVp19kZMbxjcMFEfG9kFxUNK7Sx2y40DNBq5jBJHy0CO3DfwcVu9gHqiTd5k6nCHpb4d5JavMbgxnv_VDVp_RR9_09SBhExXyYmfWcq1swjQIl7gVM.FmIZf9fJWDuwM1RN3wVmcDkAdhYunt2sanVpc3WmUgE&dib_tag=se&hvadid=320777155811&hvdev=c&hvexpln=0&hvlocphy=9199249&hvnetw=g&hvocijid=11397190425051405773--&hvqmt=e&hvrand=11397190425051405773&hvtargid=kwd-297743301498&hydadcr=23168_1793047&keywords=placa%2Barduino%2Buno&mcid=3099ea86dcbb3233b18e8a4f553fb756&qid=1788450832&sr=8-3-spons&aref=WYtrmVaIaw&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1)** | **Function:** Programmable microcontroller board for controlling sensors, actuators, and embedded electronic systems. |
 
 <p align="center">
 <img src="fotos_electronica/IMG_2478.jpeg" width="700" height="700" />
@@ -81,7 +81,7 @@ Para conseguir que el robot se pueda mover, hemos utilizado solo un motor que va
 |**Stall Current:** ≈1.2 A|**No-Load Current:** ≈150–250 mA|
 |**Output Shaft:** Double D Shaft |**Gearbox Type:** Plastic reduction gearbox|
 |**Motor Type:** Brushed DC Motor|**Features:** High torque, low cost, lightweight, suitable for robot cars |
-| 🔗 **[Buy Here](https://www.lcsc.com/product-image/C112633.html)** | **Function:** Provides rotational motion to drive robot wheels and other small mechanical systems. |
+| 🔗 **[Buy Here](https://www.amazon.es/3-6V-Motor-Arduino-Smart-Robot/dp/B08MT8KL2B)** | **Function:** Provides rotational motion to drive robot wheels and other small mechanical systems. |
 
 <p align="center">
 <img src="fotos_electronica/IMG_2477.jpeg" width="700" height="700" />
@@ -97,7 +97,7 @@ Las baterías 18650 que son de ion de litio son ampliamente usadas en robótica 
 |**Rated Capacity:** 9900 mAh*|**Rechargeable:** Yes|
 |**Configuration:** Can be connected in series or parallel |**Battery Type:** Lithium-ion (Li-ion)|
 |**Note:** Many low-cost batteries advertised as 9900 mAh do not actually achieve this capacity. Most genuine 18650 Li-ion cells from reputable manufacturers have capacities in the 2000–3500 mAh range|**Features:** High energy density, low self-discharge, rechargeable, lightweight |
-| 🔗 **[Buy Here](https://www.lcsc.com/product-image/C112633.html)** | **Function:** Supplies portable power for robotics, electronic projects, and battery-powered systems. |
+| 🔗 **[Buy Here](https://es.aliexpress.com/item/1005007975621227.html?src=google&src=google&albch=shopping&acnt=439-079-4345&isdl=y&slnk=&plac=&mtctp=&albbt=Google_7_shopping&aff_platform=google&aff_short_key=UneMJZVf&gclsrc=aw.ds&albagn=888888&ds_e_adid=&ds_e_matchtype=&ds_e_device=c&ds_e_network=x&ds_e_product_group_id=&ds_e_product_id=es1005007975621227&ds_e_product_merchant_id=5445746250&ds_e_product_country=ES&ds_e_product_language=es&ds_e_product_channel=online&ds_e_product_store_id=&ds_url_v=2&albcp=21840696692&albag=&isSmbAutoCall=false&needSmbHouyi=false&gad_source=1&gad_campaignid=21844625911&gbraid=0AAAAACbpfvY6Tr7heMhr1Ue2c3Xx6zC0y&gclid=Cj0KCQjwteTUBhD4ARIsAEYjs3ojJ9yLZBzr1O5j3zBbPf4AU3kRp23NCWbZHPOVBxqpzETvLth4OAIaAuNUEALw_wcB)** | **Function:** Supplies portable power for robotics, electronic projects, and battery-powered systems. |
 
 <p align="center">
 <img src="fotos_electronica/IMG_2476.jpeg" width="700" height="700" />
@@ -113,5 +113,5 @@ Las baterías 18650 que son de ion de litio son ampliamente usadas en robótica 
 |**Image Sensor:** Aptina MT9M114, 1296×976 resolution with integrated image flow processor |**Field of View:** 60° horizontal, 40° vertical|
 |**Frame Rate:** 60 fps (16.7 ms per frame) | **Processor:** NXP LPC4330, dual-core, 204 MHz|
 |**Control Interface:** UART serial, SPI, I2C, USB, digital, analog|**Built-in Features:** Color-based object learning/detection, line and intersection tracking, barcode-style "road sign" detection, onboard memory for up to 7 saved objects, integrated LED light source (~20 lumens)|
-| 🔗 **[Buy Here](https://www.lcsc.com/product-image/C112633.html)** |**Function:** Smart vision sensor that processes images onboard to recognize and track objects by color, lines, and signs — freeing the main microcontroller (Arduino/Raspberry Pi) from that processing load. |
+| 🔗 **[Buy Here](https://eu.robotshop.com/es/products/sensor-de-imagen-de-vision-robotica-pixy-21-de-charmed-labs?gad_source=1&gad_campaignid=20151977646&gbraid=0AAAAAD_f_xyTTc3D6DgA-EzSpU38W9Ajj&gclid=Cj0KCQjwteTUBhD4ARIsAEYjs3pSliz38hXgobSBDR2CWHVE9Ir7rqIC_WgeYnrKgPRKOID7nr_NkakaAq7yEALw_wcB)** |**Function:** Smart vision sensor that processes images onboard to recognize and track objects by color, lines, and signs — freeing the main microcontroller (Arduino/Raspberry Pi) from that processing load. |
 
