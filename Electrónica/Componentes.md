@@ -156,7 +156,8 @@ Un giroscopio es un sensor que mide la velocidad angular o cambio de orientació
 <p align="center">
 <img src="fotos_electronica/conexionesgiroscopio.jpg" width="700" height="700" />
 </p>
-| <img src="fotos_electronica/giroscopiofot.jpg"> | **Specifications** |
+
+| <img src="fotos_electronica/giroscopiofot.png"> | **Specifications** |
 |---|---|
 | **Model:** BNO055 | **Operating Voltage:** 2.4V – 3.6V |
 | **Logic Voltage:** 3.3V | **Output Frequency:** Up to 100 Hz (Gyroscope), 100 Hz (Accelerometer), 20 Hz (Magnetometer) |
