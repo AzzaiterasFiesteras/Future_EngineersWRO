@@ -33,7 +33,9 @@
    - [Chassis](/Mecánica/Chasis.md)
    - [Steering system](/Mecánica/Direccion.md)
      
-5. [Electronics](/Electrónica/)
+5. [Robotics Diaries](/Diario_de_ingenieria/)
+     
+6. [Electronics](/Electrónica/)
    - [Power system](/Electrónica/Alimentacion.md)
    - [Design](/Electrónica/Diseño.md)
    - [Components](/Electrónica/Componentes.md)
