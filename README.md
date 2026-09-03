@@ -406,7 +406,7 @@ else {
 ```
 > However, if the robot does not detect any walls, it means that the path is clear. In this case, the motors are activated and the speed is increased. At the same time, the direction is continuously adjusted to ensure the robot moves in a straight line. If the robot deviates from the correct path, the servo automatically corrects the steering to bring it back to a straight trajectory.
 
-### Obstacle Challenge
+# Obstacle Challenge
 ## Libraries
 ```cpp
 #include <Wire.h>
