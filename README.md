@@ -91,6 +91,57 @@
 </table>
 
 ---
+## 📁 Project Structure
+
+```
+📦 Future_Engineers_26
+├── 📁 Introduccion
+│   ├── 📁 fotos_introduccion 
+│   ├── 📄 Objetivo.md
+│   └── 📄 Presentacion_equipo.md
+├── 📁 Condiciones Previas
+│   ├── 📄 Condiciones_Previas.md
+│   └── 📄 Materiales_acabado.md
+├── 📁 Mecánica
+│   ├── 📁 fotos_mecánica
+│   ├── 📄 Chasis.md
+│   └── 📄 Direccion.md
+├── 📁 Diario_de_ingenieria
+│   ├──📄 01-07.md
+│   ├──📄 02-07.md
+│   ├──📄 03-07.md
+│   ├──📄 06-07.md
+│   ├──📄 07-07.md
+│   ├──📄 08-07.md
+│   ├──📄 09-07.md
+│   └──📄 12-07.md
+├── 📁 Electrónica
+│   ├── 📁 fotos_electronica
+│   ├── 📄 Alimentacion.md
+│   ├── 📄 Diseño.md
+│   └── 📄 Componentes.md
+├── 📁 Programación
+│   ├── 📁 fotos_programacion
+│   ├── 📄 Explicacion_programa.md
+│   └── 📄 Pensamiento_lógico.md
+├── 📁 Archivos_en3D
+├── 📁 Análisis
+│   ├── 📁 fotos_analisis
+│   ├── 📄 Problemas_detectados.md
+│   └── 📄 Propuestas_de_mejora.md
+├── 📁 Resultado
+│   ├── 📁 fotos_equipo
+│   ├── 📁 fotos_robot
+│   └── 📄 Resultado_final.md
+├── 📁 Conclusiones
+│   └── 📄Conocimientos_adquiridos.md
+├── 📁 Bibliografía
+│   ├── 📁 imagenesbiblio
+│   └── 📄Bibliografía.md
+├── 📄 LICENSE
+└── 📄 README.md
+```
+---
 
 ## Introduction 
 > [!WARNING]
