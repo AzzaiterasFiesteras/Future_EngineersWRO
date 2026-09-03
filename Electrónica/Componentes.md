@@ -11,6 +11,9 @@
 | Cámara |PixyCam 2 |
 
 ## Servomotor
+Un servo (o servomotor) es un motor eléctrico especial que permite controlar con total exactitud la posición de su eje, su velocidad y su fuerza. Hay servos que se pueden mover 360º y otros que solo permiten 180º.Viene con tres cables de conexión y varios elementos de giro.
+- El cable rojo es el positivo (5 V), el marrón el negativo y el naranja el de control (3,3 V).
+
 Basándonos en experiencias anteriores, directamente hemos optado por el servomotor MG996R ya que funciona controlando ángulos de giro en lugar de controlar la velocidad del propio servomotor. Esto facilita bastante todo ya que ahora podemos mover las ruedas delanteras con más precisión y requiriendo mucho menos esfuerzo. El modelo que elegimos fue el MG996R, como ya he dicho, ya que es conocido por ser más potente y por tener un buen rango de movimiento para este tipo de proyectos.
 
 | <img src="fotos_electronica/MG996R.jpg"> | **Specifications** |
@@ -20,6 +23,7 @@ Basándonos en experiencias anteriores, directamente hemos optado por el servomo
 | **Stall Torque:** 9.4 kg·cm @ 4.8V / 11 kg·cm @ 6.0V | **Features:** Digital servo, metal gears, dual ball bearings, approximately 180° rotation|
 | **Control Interface:** PWM (3-wire: Signal, VCC, GND) | **Operating speed:** 0.17 s/60° @ 4.8V, 0.14 s/60° @ 6.0V |
 | 🔗 **[Buy Here](https://es.aliexpress.com/item/1005012099566939.html?src=google&src=google&albch=shopping&acnt=439-079-4345&isdl=y&slnk=&plac=&mtctp=&albbt=Google_7_shopping&aff_platform=google&aff_short_key=UneMJZVf&gclsrc=aw.ds&albagn=888888&ds_e_adid=&ds_e_matchtype=&ds_e_device=c&ds_e_network=x&ds_e_product_group_id=&ds_e_product_id=es1005012099566939&ds_e_product_merchant_id=5762056048&ds_e_product_country=ES&ds_e_product_language=es&ds_e_product_channel=online&ds_e_product_store_id=&ds_url_v=2&albcp=21840696692&albag=&isSmbAutoCall=false&needSmbHouyi=false&gad_source=1&gad_campaignid=21844625911&gbraid=0AAAAACbpfvY6Tr7heMhr1Ue2c3Xx6zC0y&gclid=Cj0KCQjwteTUBhD4ARIsAEYjs3qgW-0pwn4_eohH-4rpaZBpYEAsZsWip29HAc8yWjpGnKSZb1OpuhcaAjW6EALw_wcB)** | **Function:** Controls the steering system |
+
 
 <p align="center">
 <img src="fotos_electronica/IMG_1356.jpeg" width="700" height="700" />
