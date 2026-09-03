@@ -9,6 +9,7 @@
 | Motor| Modelo TT con reducción de velocidad 1:40. |
 | Baterías | 2 x 18650 of 9900 mAh cada una |
 | Cámara |PixyCam 2 |
+| Giroscopio |BNO055 |
 
 ## Servomotor
 Un servo (o servomotor) es un motor eléctrico especial que permite controlar con total exactitud la posición de su eje, su velocidad y su fuerza. Hay servos que se pueden mover 360º y otros que solo permiten 180º.Viene con tres cables de conexión y varios elementos de giro.
@@ -129,7 +130,13 @@ Las baterías 18650 que son de ion de litio son ampliamente usadas en robótica 
 </p>
 
 ## Cámara
+La Pixy2 es una cámara capaz de detectar, rastrear y seguir objetos en tiempo real sin necesidad de un ordenador potente. Puede aprender a detectar hasta 7 colores diferentes simultáneamente y es compatible con Arduino, Raspberry Pi y otros microcontroladores. Se conecta por SPI, I2C, UART, USB o pines digitales/analógicos. Primero hay que hacer una configuración inicial en su propio software (PixyMon), y entrenar la cámara para detectar los colores de los distintos objetos. Una vez programado esto en su propia interfaz, pasamos a incluirla en el programa de Arduino para establecer las órdenes que tiene que seguir posteriormente. 
 
+<p align="center">
+<img src="fotos_electronica/IMG_1357.jpeg" width="700" height="700" />
+</p>
+
+Era totalmente necesario su incoporación para el Obstacle Challenge. Esta nos permitiría diferenciar los colores de los distintos semáforos y poder decidir el ángulo y dirección de giro.
 
 | <img src="fotos_electronica/camarafoto.jpg"> | **Specifications** |
 |------------------------------|------------------------------|
