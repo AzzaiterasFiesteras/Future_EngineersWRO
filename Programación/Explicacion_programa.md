@@ -278,7 +278,7 @@ void terminarCarrera() {
 Esta función sirve para que, cuando el robot termina la carrera, no intente girar ni corregir la dirección, sino que se mantenga completamente recto. Para eso primero centra el servo y luego hace que avance en línea recta durante unos segundos y entonces se detiene por completo. Este subprograma está pensado para asegurar que al final el robot siga recto y que no le pille el contador de giros a mitad de uno. 
 
 # Explicación del programa - Obstacle Challenge
-## Variables y librerías
+## Librerías
 ```C++
 #include <Wire.h>
 #include <SPI.h>
@@ -288,3 +288,25 @@ Esta función sirve para que, cuando el robot termina la carrera, no intente gir
 #include <Ultrasonic.h>
 #include <Pixy2.h>
 ```
+Al principio del código se incluyen varias librerías, que son conjuntos de funciones ya programadas por otros que nos permiten controlar componentes complejos sin tener que programar desde cero cómo funcionan. 
+- "Wire" y "SPI" son protocolos de comunicación entre la placa y otros componentes.
+- "Adafruit_BNO055" permite interactuar con el giroscopio.
+-  "Servo" controla el servomotor que actúa como dirección.
+- "Ultrasonic" gestiona los sensores de distancia por ultrasonidos
+- "Pixy2" es la librería específica de la cámara inteligente que reconoce colores.
+
+## Pines y Variables
+```C++
+int ENA = 5;
+int IN1 = 6;
+int IN2 = 7;
+Servo cochino;
+const int pinservo = 9;
+const int pinPulsador = 13;
+
+float anguloObjetivo;
+int centroServo = 35;
+int sentido = 0;
+int contadorGiros = 0;
+```
+A continuación se asignan los pines del Arduino a cada componente físico. "ENA", ·"IN1" e "IN2" corresponden al motor de tracción, donde regulamos velocidad y sentido de giro de las ruedas.
