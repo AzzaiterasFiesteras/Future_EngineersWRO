@@ -37,7 +37,11 @@ Basándonos en experiencias anteriores, directamente hemos optado por el servomo
 </p>
 
 ## Escudo
-El escudo que hemos utilizado ha sido el modelo L298N, y lo usamos principalmente para hacer las conexiones de los motores. Este escudo nos ha permitido controlar el movimiento de los motores de una forma más sencilla, ya que se encarga de enviar la energía necesaria para que funcionen correctamente. Además ya eramos conscientes de la incompatibilidad del escudo DRV8835 de Pololu con nuestros motores. Por lo tanto, seleccionamos directamente el modelo L298N.
+Un escudo es una placa electrónica con un doble puente H que permite controlar la velocidad y la dirección de motores de corriente continua (DC) usando tarjetas como Ardu
+El escudo que hemos utilizado ha sido el modelo L298N, y lo usamos principalmente para hacer las conexiones de los motores. Este escudo nos ha permitido controlar el movimiento de los motores de una forma más sencilla, ya que se encarga de enviar la energía necesaria para que funcionen correctamente. Además ya eramos conscientes de la incompatibilidad del escudo DRV8835 de Pololu con nuestros motores. Por lo tanto, seleccionamos directamente el modelo L298N. Lo conectamos de la siguiente manera: 
+<p align="center">
+<img src="fotos_electronica/conexionesescudo.png" width="700" height="700" />
+</p>
 
 | <img src="fotos_electronica/escudofoto.png"> | **Specifications** |
 |------------------------------|------------------------------|
@@ -75,6 +79,9 @@ Para la correcta programación de nuestro robot necesitábamos disponer de tres 
 
 ## Placa 
 La placa que hemos utilizado para nuestro robot ha sido la Arduino Uno R3. Decidimos usar esta placa porque ya habíamos trabajado con Arduino en otras ocasiones y nos parecía más fácil de entender. Además, es muy útil para conectar sensores, cables y otros componentes debido a su multitud de pines, y luego programarla para que funcione como queremos. Gracias a esto, pudimos hacer la programación del robot de forma más sencilla y aprender mejor cómo funciona la programación y la electrónica.
+
+Llamamos Arduino a una placa, normalmente de color azul, en donde se encuentra un microcontrolador que se puede programar facilmente con lenguaje C básico y conectándolo a nuestro ordenador. Con él podemos hacer un juego de luces, mover servomotores, comunicarnos con el Android por Bluetooth, ver información de un sensor de temperatura en una pantalla LCD,...
+Se conecta mediante un cable USB al ordenador. 
 
 | <img src="fotos_electronica/placafoto.jpg"> | **Specifications** |
 |------------------------------|------------------------------|
