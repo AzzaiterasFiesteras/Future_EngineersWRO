@@ -459,6 +459,9 @@ For programming, we use the Arduino IDE program. Once the program is complete, a
 > 
 > [For more information about the conclusion and the acquired knowleadge click here](Conclusiones/Conocimientos_adquiridos.md)
 
+## Contact us
+[![Team Website](https://azzaiteros.blogspot.com/)]()
+[![Team Youtube](https://img.shields.io/badge/Youtube-%23FF0000.svg?style=for-the-badge&logo=Youtube&logoColor=white)](https://www.youtube.com/@evaespinosaortiz4305)
 
 ## Bibliography 
 
