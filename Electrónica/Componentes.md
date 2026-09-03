@@ -154,7 +154,7 @@ Un giroscopio es un sensor que mide la velocidad angular o cambio de orientació
 - SDA: Conectar al pin SDA de tu placa (en Arduino Uno es A4).
 - SCL: Conectar al pin SCL de tu placa (en Arduino Uno es A5).
 <p align="center">
-<img src="fotos_electronica/conexionesgiroscopio.png" width="700" height="700" />
+<img src="fotos_electronica/conexionesgiroscopio.jpg" width="700" height="700" />
 </p>
 | <img src="fotos_electronica/giroscopiofot.jpg"> | **Specifications** |
 |---|---|
