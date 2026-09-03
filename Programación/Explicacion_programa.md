@@ -289,11 +289,11 @@ Esta función sirve para que, cuando el robot termina la carrera, no intente gir
 #include <Pixy2.h>
 ```
 Al principio del código se incluyen varias librerías, que son conjuntos de funciones ya programadas por otros que nos permiten controlar componentes complejos sin tener que programar desde cero cómo funcionan. 
-- "Wire" y "SPI" son protocolos de comunicación entre la placa y otros componentes.
-- "Adafruit_BNO055" permite interactuar con el giroscopio.
--  "Servo" controla el servomotor que actúa como dirección.
-- "Ultrasonic" gestiona los sensores de distancia por ultrasonidos
-- "Pixy2" es la librería específica de la cámara inteligente que reconoce colores.
+- `Wire` y `SPI` son protocolos de comunicación entre la placa y otros componentes.
+- `Adafruit_BNO055` permite interactuar con el giroscopio.
+-  `Servo` controla el servomotor que actúa como dirección.
+- `Ultrasonic` gestiona los sensores de distancia por ultrasonidos
+- `Pixy2` es la librería específica de la cámara inteligente que reconoce colores.
 
 ## Pines y Variables
 ```C++
@@ -309,4 +309,83 @@ int centroServo = 35;
 int sentido = 0;
 int contadorGiros = 0;
 ```
-A continuación se asignan los pines del Arduino a cada componente físico. "ENA", ·"IN1" e "IN2" corresponden al motor de tracción, donde regulamos velocidad y sentido de giro de las ruedas.
+- A continuación se asignan los pines del Arduino a cada componente físico. `ENA`, ·`IN1` e `IN2` corresponden al motor de tracción, donde regulamos velocidad y sentido de giro de las ruedas.
+- `pinservo` indica en qué pin está conectado el servomotor que dirige la dirección.
+-  `pinPulsador` es el botón que el usuario pulsa para iniciar la carrera.
+
+Después se declaran variables que actúan como la "memoria de trabajo" del robot durante su funcionamiento: `anguloObjetivo` almacena el ángulo hacia el que el robot debe orientarse para avanzar en línea recta; `centroServo` es la posición recta del servomotor; `sentido` determina si el circuito se recorre girando siempre hacia la derecha o hacia la izquierda; y `contadorGiros` lleva la cuenta de cuántas esquinas ha superado el robot, lo cual permite saber cuándo ha completado las tres vueltas.
+
+## Cámara
+```cpp
+Adafruit_BNO055 bno = Adafruit_BNO055(55);
+Pixy2 pixy;
+#define SIG_ROJO  1
+#define SIG_VERDE 2
+const int GIRO_COLOR = 15;
+```
+Aquí se crean los objetos que representan al giroscopio (`bno`) y a la cámara (`pixy`). En programación orientada a objetos, esto equivale a decir que ya disponemos de esos dos instrumentos preparados para ser utilizados mediante sus respectivas funciones a lo largo del programa. La cámara Pixy2 no reconoce los colores por sí misma de forma innata: es necesario entrenarla previamente mediante un software externo llamado PixyMon, instalado en un ordenador. Durante ese entrenamiento se le muestra un objeto de un color determinado y se le asigna un número identificativo, denominado "signature". En este programa se asume que la signature número 1 corresponde al rojo y la signature número 2 al verde, aunque este orden depende exclusivamente de cómo se haya realizado el entrenamiento. La constante `GIRO_COLOR` determina cuántos grados se desviará el servomotor cuando se detecte uno de estos colores.
+
+## Ultrasonidos
+```cpp
+#define TRIG_IZQ 8
+#define ECHO_IZQ 10
+Ultrasonic ultraIZQ(TRIG_IZQ, ECHO_IZQ, 60000);
+```
+El robot dispone de tres sensores de ultrasonidos —izquierdo, central y derecho— que funcionan de tal manera: emiten una onda sonora de alta frecuencia y miden el tiempo que tarda en regresar tras rebotar en un obstáculo. A partir de ese tiempo, y conociendo la velocidad del sonido en el aire, se calcula la distancia a la que se encuentra dicho obstáculo.
+
+## Void Set up
+```cpp
+void setup() {
+  Serial.begin(9600);
+  ...
+  if (!bno.begin()) { while(1); }
+  pixy.init();
+  prepararSensor();
+}
+```
+La función `setup()` se ejecuta una única vez, justo al encender el Arduino, y su finalidad es preparar todos los componentes antes de que el robot empiece a moverse. En ella se inicializa la comunicación serie (útil para revisar las medidas desde el ordenador), se configuran los pines, se centra el servomotor, y se comprueba que el giroscopio responde correctamente; si no se detecta, el programa entra en un bucle infinito y detiene toda actividad, ya que sin ese sensor el robot no podría orientarse. A continuación se inicializa la cámara Pixy2 y, por último, se llama a la función `prepararSensor()`, que se explicará más adelante.
+
+## Void Loop
+```cpp
+if (digitalRead(pinPulsador) == LOW) {
+  start = true;
+}
+if (contadorGiros >= 12) {
+  terminarCarrera();
+  while(1);
+}
+int cmCentro = ultraCENTRO.Ranging(CM);
+float anguloAhora = obtenerGrados();
+int cmIzq = ultraIZQ.Ranging(CM);
+int cmDer = ultraDERECH.Ranging(CM);
+
+if (cmCentro < 80) { contador1++; } else { contador1 = 0; }
+if (cmCentro < 140 && abs(cmIzq-cmDer) > 120) { contador2++; } else { contador2 = 0; }
+if (contador1 > 2 || contador2 > 2) {
+  // para el motor
+  // si es la primera esquina, decide si el circuito es horario o antihorario
+  // gira 90°
+  contadorGiros++;
+}
+else {
+  // avanza
+  int colorDetectado = detectarColor();
+
+  if (colorDetectado == SIG_VERDE) {
+    cochino.write(centroServo - GIRO_COLOR);   // gira un poco a la izquierda
+  } else if (colorDetectado == SIG_ROJO) {
+    cochino.write(centroServo + GIRO_COLOR);   // gira un poco a la derecha
+  } else {
+    // sin colores: corrige el rumbo con el giroscopio, como antes
+  }
+}
+```
+La función `loop()` constituye el núcleo del programa, ya que se ejecuta de manera repetida y continua mientras el Arduino permanezca encendido, miles de veces por segundo.
+Espera del pulsador. Al inicio del bucle se comprueba si se ha pulsado el botón de arranque. Mientras esto no ocurra, la variable `start` permanece en `false` y el resto del código no llega a ejecutarse de forma activa.
+Condición de finalización. Una vez iniciada la carrera, se comprueba si `contadorGiros` ha alcanzado el valor 12, lo que equivale a tres vueltas completas, considerando que cada vuelta tiene cuatro esquinas. En ese caso, se llama a la función `terminarCarrera()` y el programa se detiene definitivamente mediante un bucle infinito vacío.
+Lectura de sensores. En cada iteración se obtienen las distancias medidas por los tres sensores de ultrasonidos y el ángulo actual de orientación proporcionado por el giroscopio, mediante la función auxiliar `obtenerGrados()`.
+Filtrado de lecturas. Para evitar que una lectura puntual errónea provoque un giro incorrecto, el programa no reacciona ante una sola detección de pared, sino que utiliza dos contadores (`contador1` y `contador2`) que se incrementan únicamente cuando la condición de proximidad se cumple varias veces consecutivas. Este mecanismo actúa como un filtro de seguridad frente al ruido característico de los sensores ultrasónicos.
+Comportamiento ante un obstáculo. Cuando los contadores superan el umbral establecido, el motor se detiene, y si se trata de la primera esquina detectada en toda la carrera, el programa decide de manera autónoma si el circuito se recorrerá en sentido horario o antihorario, comparando qué lateral tiene mayor distancia libre. Seguidamente, se ejecuta la función `hacerGiro()` para realizar el giro de noventa grados correspondiente.
+Comportamiento con el camino libre. Es en esta parte del programa donde se ha integrado la cámara. El robot avanza y, antes de aplicar la corrección habitual del rumbo, consulta a la función `detectarColor()` si se está detectando un bloque rojo o verde. Si el resultado es verde, el servomotor se desplaza ligeramente hacia la izquierda respecto a su posición central; si es rojo, se desplaza hacia la derecha. Únicamente cuando no se detecta ninguno de estos dos colores, el programa recurre a su lógica original: comparar el ángulo actual con el ángulo objetivo y corregir la dirección del servomotor en consecuencia, para mantener una trayectoria recta.
+
+
