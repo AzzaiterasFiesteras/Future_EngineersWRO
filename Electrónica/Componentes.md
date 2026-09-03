@@ -52,6 +52,13 @@ El escudo que hemos utilizado ha sido el modelo L298N, y lo usamos principalment
 </p>
 
 ## Sensores de ultrasonidos 
+Un sensor ultrasónico es un dispositivo electrónico que mide la distancia y detecta objetos mediante el uso de ondas sonoras de alta frecuencia que no escucha el oído humano. Funciona de tal modo que el sensor envía un pulso de sonido ultrasónico a través del aire y la onda choca contra un objeto cercano y regresa en forma de eco. El aparato mide el tiempo exacto que tarda el eco en ir y volver para calcular la distancia con la fórmula de velocidad del sonido. Y así, consigue medir distancias. Se conecta de tal manera:
+
+<p align="center">
+<img src="fotos_electronica/conexionesultra.png" width="700" height="700" />
+</p>
+
+
 Para la correcta programación de nuestro robot necesitábamos disponer de tres sensores ultrasónicos de distancia para conseguir que el robot no impactara ni tocara ninguna pared. Para la implementación de estos en el chasis utilizamos una estructura diseñada previamente en la interfaz de TinkerCad y la imprimimos en 3D. Esto nos permitió sujetar bien los tres sensores de ultrasonidos. De tal modo que nos aseguramos que los sensores se mantienen en su sitio sin caerse mientras hacíamos pruebas.
 
 | <img src="fotos_electronica/ultrafoto.jpg"> | **Specifications** |
