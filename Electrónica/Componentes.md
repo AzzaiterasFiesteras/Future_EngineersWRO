@@ -156,5 +156,10 @@ Un giroscopio es un sensor que mide la velocidad angular o cambio de orientació
 <p align="center">
 <img src="fotos_electronica/conexionesgiroscopio.png" width="700" height="700" />
 </p>
-
-| Model: BNO055 | Operating Voltage: 1.8V – 3.6V | | Logic Voltage: 3.3V / 5V compatible | Output Frequency: 62.5 Hz (Accelerometer), 100 Hz (Gyroscope), 20 Hz (Magnetometer) | | Resolution: 14-bit (Accel) / 16-bit (Gyro) / 13-bit (Mag) | Features: 9-axis IMU, sensor fusion (Euler angles, quaternions), integrated microcontroller, calibration routines | | Control Interface: I2C / UART (4-wire: SDA, SCL, VCC, GND) | Operating speed: Continuous real-time output, configurable data rates up to 100 Hz | | 🔗 Buy Here | Function: 9-DOF orientation, motion sensing, and inertial measurement |
+| <img src="fotos_electronica/giroscopiofot.jpg"> | **Specifications** |
+|---|---|
+| **Model:** BNO055 | **Operating Voltage:** 2.4V – 3.6V |
+| **Logic Voltage:** 3.3V | **Output Frequency:** Up to 100 Hz (Gyroscope), 100 Hz (Accelerometer), 20 Hz (Magnetometer) |
+| **Resolution:** 14-bit (Accelerometer) / 16-bit (Gyroscope) / 13-bit (Magnetometer) | **Features:** 9-axis IMU, sensor fusion, Euler angles, quaternions, integrated microcontroller, automatic calibration |
+| **Control Interface:** I²C / UART | **Operating speed:** Continuous real-time output, configurable data rates up to 100 Hz |
+| 🔗 [**Buy Here**](https://www.adafruit.com/product/2472) | **Function:** 9-DOF orientation, motion sensing, and inertial measurement |
