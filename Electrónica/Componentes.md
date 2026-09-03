@@ -13,6 +13,13 @@
 ## Servomotor
 Un servo (o servomotor) es un motor eléctrico especial que permite controlar con total exactitud la posición de su eje, su velocidad y su fuerza. Hay servos que se pueden mover 360º y otros que solo permiten 180º.Viene con tres cables de conexión y varios elementos de giro.
 - El cable rojo es el positivo (5 V), el marrón el negativo y el naranja el de control (3,3 V).
+<p align="center">
+<img src="fotos_electronica/explicacionservo.png">
+</p>
+Un servomotor por dentro está formado principalmente por un motor eléctrico, una caja de reducción de engranajes, un potenciómetro o sensor de posición y una placa de circuito impreso de control. Los engranajes reducen la alta velocidad del motor y multiplican la fuerza de giro.
+<p align="center">
+<img src="fotos_electronica/engranajesservo.png">
+</p>
 
 Basándonos en experiencias anteriores, directamente hemos optado por el servomotor MG996R ya que funciona controlando ángulos de giro en lugar de controlar la velocidad del propio servomotor. Esto facilita bastante todo ya que ahora podemos mover las ruedas delanteras con más precisión y requiriendo mucho menos esfuerzo. El modelo que elegimos fue el MG996R, como ya he dicho, ya que es conocido por ser más potente y por tener un buen rango de movimiento para este tipo de proyectos.
 
