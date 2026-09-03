@@ -133,7 +133,7 @@ Las baterías 18650 que son de ion de litio son ampliamente usadas en robótica 
 La Pixy2 es una cámara capaz de detectar, rastrear y seguir objetos en tiempo real sin necesidad de un ordenador potente. Puede aprender a detectar hasta 7 colores diferentes simultáneamente y es compatible con Arduino, Raspberry Pi y otros microcontroladores. Se conecta por SPI, I2C, UART, USB o pines digitales/analógicos. Primero hay que hacer una configuración inicial en su propio software (PixyMon), y entrenar la cámara para detectar los colores de los distintos objetos. Una vez programado esto en su propia interfaz, pasamos a incluirla en el programa de Arduino para establecer las órdenes que tiene que seguir posteriormente. 
 
 <p align="center">
-<img src="Análisis/fotos_analisis/image (1).png" width="700" height="700" />
+<img src="fotos_electronica/bloques.png" width="700" height="700" />
 </p>
 
 Era totalmente necesario su incoporación para el Obstacle Challenge. Esta nos permitiría diferenciar los colores de los distintos semáforos y poder decidir el ángulo y dirección de giro.
